@@ -13,7 +13,7 @@ for i in index:
 
 opt = int(input("\nEnter video format (index): "))
 vid = format[opt]
+
 print("\nDownloading....\n")
 vid.download()
-
 print("***Download Successfull***\n")
