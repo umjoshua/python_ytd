@@ -14,7 +14,10 @@ for video in playlist.videos:
         print(i)
     opt = int(input("\nEnter video format (index), -1 to skip: "))
     vid = format[opt]
-    print('Downloading : {} '.format(video.title))
-    vid.download('./LSD/')
-    print("***Download Successfull***\n")
+    if opt!=-1:
+        print('Downloading : {} '.format(video.title))
+        vid.download('./LSD/')
+        print("***Download Successfull***\n")
+    else:
+        print("Download cancelled\n")
 
