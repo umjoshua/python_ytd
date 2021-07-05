@@ -13,7 +13,6 @@ for video in playlist.videos:
     for i in index:
         print(i)
     opt = int(input("\nEnter video format (index): "))
-    opt = 1
     vid = format[opt]
     print('Downloading : {} '.format(video.title))
     vid.download('./LSD/')
