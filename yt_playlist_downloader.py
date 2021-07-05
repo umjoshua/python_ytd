@@ -1,12 +1,21 @@
 from pytube import Playlist
+from pytube import YouTube
 
 print("***Youtube Playlist Downloader***\n")
 
 playlist=Playlist(input("Enter Playlist URL: "))
+
 for video in playlist.videos:
-    print('downloading : {} with url : {}'.format(video.title, video.watch_url))
-    video.streams.filter(type='video', subtype='mp4', res='720p', progressive=True).\
-        order_by('resolution').\
-        desc().\
-            first().\
-                download()
+    url= YouTube(video.watch_url)
+    format = url.streams.filter(progressive=True)
+    index = list(enumerate(format))
+    print('{} '.format(video.title))
+    for i in index:
+        print(i)
+    opt = int(input("\nEnter video format (index): "))
+    opt = 1
+    vid = format[opt]
+    print('Downloading : {} '.format(video.title))
+    vid.download('./LSD/')
+    print("***Download Successfull***\n")
+
