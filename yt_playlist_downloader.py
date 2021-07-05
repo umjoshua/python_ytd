@@ -16,7 +16,7 @@ for video in playlist.videos:
     vid = format[opt]
     if opt!=-1:
         print('Downloading : {} '.format(video.title))
-        vid.download('./LSD/')
+        vid.download()
         print("***Download Successfull***\n")
     else:
         print("Download cancelled\n")
